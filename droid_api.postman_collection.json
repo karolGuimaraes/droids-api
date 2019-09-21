@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "e74896cb-7275-489c-9cd2-05ac822641d2",
+		"name": "droid_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listar_demandas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/demandas",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demandas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionar_demanda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"anunciante\": \"karol\", \"peca\":{ \"descricao\": \"Cabo\"} , \"endereco_entrega\":{ \"cep\": \"23030572\", \"logradouro\": \"Rua b\", \"numero\":\"1\", \"bairro\":\"Guaratiba\", \"cidade\": \"Rio de janeiro\", \"estado\": \"Rio de janeiro\" } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/adicionar",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"adicionar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finalizar_demanda",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/finalizar",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"finalizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "excluir_demanda",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":2}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/excluir",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"excluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar_demanda",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"demanda\": \"1\",\n\t\"peca\":{ \"descricao\": \"Conector\"} , \n\t\"endereco_entrega\":{ \"cep\": \"23030572\", \"logradouro\": \"Rua c\", \"numero\":\"1\", \"bairro\":\"Guaratiba\", \"cidade\": \"Rio de janeiro\", \"estado\": \"Rio de janeiro\" } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/editar",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criar_anunciante",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"telefone\": \"994044228\", \"username\":\"karol\", \"first_name\":\"karol\", \"email\": \"karol.silva@gmail.com\", \"password\": 1, \"admin\": \"Sim\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/usuario",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
