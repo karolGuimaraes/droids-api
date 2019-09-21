@@ -58,7 +58,7 @@ def editar_demanda(request):
             Endereco.objects.filter(id=demanda.endereco_entrega.id).update(**endereco)
 
             serializer = DemandaSerializer(demanda)
-            return JsonResponse(serializer.data, status=20)
+            return JsonResponse(serializer.data, status=200)
         return JsonResponse(serializer.errors, status=400)
     except:
         return JsonResponse({'Error':'Internal server error :('}, status=500)
