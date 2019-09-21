@@ -11,9 +11,12 @@
 Acessando ( http://localhost:8000/ ), onde:
 
 - ` POST /usuario `  Criar um usuário (Administrador ou Anunciante):
-	 Criar um usuário para adicionar uma demanda.
-	 Se o 'admin' for sim, o usuário é marcado como Administrador.
-	 O username é único.
+	
+	Criar um usuário para adicionar uma demanda.
+	
+	Se o 'admin' for sim, o usuário é marcado como Administrador.
+	
+	O username é único.
 
 	- Envio:
 		{ 
