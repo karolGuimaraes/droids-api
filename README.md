@@ -1,8 +1,8 @@
 ## Droids-API
 
 ### Configurando
- - Clonar o projeto: git clone https://github.com/karolGuimaraes/challenge-bravo.git
- - Acesse a pasta /droids
+ - Clonar o projeto: git clone https://github.com/karolGuimaraes/droids-api.git
+ - Acesse a pasta /droids-api
  - Executar:  `$ docker-compose up`
  
  
@@ -71,13 +71,13 @@ Acessando ( http://localhost:8000/ ), onde:
 - ` DELETE /excluir ` Excluir uma demanda: 
 
 	- Envio:
-		{ "id": 2 }
+		{ "demanda": 2 }
 
 
 - ` PUT /finalizar ` Finalizar uma demanda: 
 
 	- Envio:
-		{ "id": 2 }
+		{ "demanda": 2 }
 
 
 
@@ -88,6 +88,17 @@ Para executa os teste unitários:
 `$ docker-compose run app python manage.py test`
 
 Resposta similar:
+
+			Creating test database for alias 'default'...
+			System check identified no issues (0 silenced).
+			..........
+			----------------------------------------------------------------------
+			Ran 10 tests in 0.053s
+
+			OK
+			Destroying test database for alias 'default'...
+
+
 
 
 
