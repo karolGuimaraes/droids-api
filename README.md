@@ -4,6 +4,8 @@
  - Clonar o projeto: git clone https://github.com/karolGuimaraes/droids-api.git
  - Acesse a pasta /droids-api
  - Executar:  `$ docker-compose up`
+ - Executar:  `$ docker-compose run api python manage.py makemigrations`
+ - Executar:  `$ docker-compose run api python manage.py migrate`
  
  
 ### Funcionamento
