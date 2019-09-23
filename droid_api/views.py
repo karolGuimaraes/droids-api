@@ -14,6 +14,20 @@ def listar_demandas(request, format=None):
         return JsonResponse({'Error':'Internal server error :('}, status=500)
 
 
+@api_view(['GET'])
+def buscar_demanda(request, id):
+    try:
+        demanda = Demanda.objects.filter(id=id)
+        if demanda:
+            demanda = demanda[0]
+            serializer = DemandaSerializer(demanda)
+            return JsonResponse(serializer.data, status=200)
+        else:
+            return JsonResponse({'Error':'Demanda não foi encontrada pelo número {}'.format(id)}, status=404)
+    except:
+        return JsonResponse({'Error':'Internal server error :('}, status=500)
+
+
 @api_view(['POST'])
 def adicionar_demanda(request):
     try:
@@ -66,9 +80,8 @@ def editar_demanda(request):
 
 
 @api_view(['DELETE'])
-def excluir_demanda(request, format=None):
+def excluir_demanda(request, id, format=None):
     try:
-        id = request.data.get('demanda', '')
         try:
             demanda = Demanda.objects.get(id=id)
             demanda.delete()
@@ -80,9 +93,8 @@ def excluir_demanda(request, format=None):
 
 
 @api_view(['PUT'])
-def finalizar_demanda(request):
+def finalizar_demanda(request, id):
     try:
-        id = request.data.get('demanda', '')
         demanda = Demanda.objects.filter(id=id)
         if demanda:
             demanda = demanda[0]
@@ -101,13 +113,13 @@ def finalizar_demanda(request):
 
 @api_view(['POST'])
 def criar_usuario(request, format=None):
-    admin = request.data.get('admin', 'Nao')
+    admin = request.data.get('admin', False)
     try:
         serializer = ContaSerializer(data=request.data)
         if serializer.is_valid():
             conta = serializer.save()
-            conta.is_active = True
-            if admin.upper() == "SIM":
+            conta.is_active = true
+            if admin:
                 conta.is_staff = True
                 conta.is_superuser = True
             conta.save()

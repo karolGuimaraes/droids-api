@@ -112,17 +112,8 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"demanda\":2}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "127.0.0.1:8000/excluir",
+					"raw": "127.0.0.1:8000/excluir/2",
 					"host": [
 						"127",
 						"0",
@@ -131,7 +122,8 @@
 					],
 					"port": "8000",
 					"path": [
-						"excluir"
+						"excluir",
+						"2"
 					]
 				}
 			},
@@ -188,7 +180,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"telefone\": \"00000000\", \"username\":\"test\", \"first_name\":\"test\", \"email\": \"test.silva@gmail.com\", \"password\": 2, \"admin\": \"SIM\"}",
+					"raw": "{ \"telefone\": \"00000000\", \"username\":\"test\", \"first_name\":\"test\", \"email\": \"test.silva@gmail.com\", \"password\": 2, \"admin\": true }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -206,6 +198,28 @@
 					"port": "8000",
 					"path": [
 						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar_demanda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/demanda/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demanda",
+						"1"
 					]
 				}
 			},
