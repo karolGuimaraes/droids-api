@@ -67,6 +67,15 @@ class Teste(TestCase):
         self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
 
 
+    def teste_buscar(self):
+        response = self.client.get('/demanda/1')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    
+    def teste_buscar_sem_demanda(self):
+        response = self.client.get('/demanda/10000')
+        self.assertEqual(status.HTTP_404_NOT_FOUND, response.status_code)
+
 
     def teste_editar(self):
         data = {
@@ -118,27 +127,19 @@ class Teste(TestCase):
 
 
     def teste_finalizar(self):
-        response = Client().put('/finalizar' ,{
-            'demanda': '1', 
-        }, content_type="application/json")
+        response = Client().put('/finalizar/1')
         self.assertEqual(status.HTTP_200_OK, response.status_code)
 
     def teste_finalizar_sem_demanda(self):
-        response = self.client.put('/finalizar' ,{
-            'demanda': '10000', 
-        }, content_type="application/json")
+        response = self.client.put('/finalizar/10000')
         self.assertEqual(status.HTTP_404_NOT_FOUND, response.status_code)
 
 
 
     def teste_excluir(self):
-        response = self.client.delete('/excluir' ,{
-            'demanda': '1', 
-        }, content_type="application/json")
+        response = self.client.delete('/excluir/1')
         self.assertEqual(status.HTTP_200_OK, response.status_code)
 
     def teste_excluir_sem_demanda(self):
-        response = self.client.delete('/excluir' ,{
-            'demanda': '10000', 
-        }, content_type="application/json")
+        response = self.client.delete('/excluir/10000')
         self.assertEqual(status.HTTP_404_NOT_FOUND, response.status_code)

@@ -33,6 +33,9 @@ Acessando ( http://localhost:8000/ ), onde:
 - ` GET /demandas ` Retorna todas as demandas: 
 
 
+- ` GET /demanda/<id> ` Retorna todas a demanda: 
+
+
 - ` POST /adicionar ` Adicionar uma demanda:
 
 	- Envio:
@@ -71,16 +74,11 @@ Acessando ( http://localhost:8000/ ), onde:
 			} 
 		}
 
-- ` DELETE /excluir ` Excluir uma demanda: 
-
-	- Envio:
-		{ "demanda": 2 }
+- ` DELETE /excluir/<id> ` Excluir uma demanda: 
 
 
-- ` PUT /finalizar ` Finalizar uma demanda: 
+- ` PUT /finalizar/<id> ` Finalizar uma demanda: 
 
-	- Envio:
-		{ "demanda": 2 }
 
 
 
@@ -94,9 +92,10 @@ Resposta similar:
 
 			Creating test database for alias 'default'...
 			System check identified no issues (0 silenced).
-			..........
+			............
 			----------------------------------------------------------------------
-			Ran 10 tests in 0.053s
+			Ran 12 tests in 0.062s
+
 
 			OK
 			Destroying test database for alias 'default'...
