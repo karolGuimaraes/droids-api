@@ -25,7 +25,7 @@ Acessando ( http://localhost:8000/ ), onde:
 			"first_name":"test", 
 			"email": "user.silva@gmail.com", 
 			"password": 12345, 
-			"admin": "Sim"
+			"admin": true
 		}
 
 
