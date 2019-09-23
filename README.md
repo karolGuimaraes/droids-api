@@ -33,7 +33,7 @@ Acessando ( http://localhost:8000/ ), onde:
 - ` GET /demandas ` Retorna todas as demandas: 
 
 
-- ` GET /demanda/<id> ` Retorna todas a demanda: 
+- ` GET /demanda/<id> ` Retorna a demanda: 
 
 
 - ` POST /adicionar ` Adicionar uma demanda:
